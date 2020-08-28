@@ -1,5 +1,5 @@
 import md5 from 'md5';
-import { QueryResult } from 'pg';
+import { QueryConfig, QueryResult } from 'pg';
 import { IPGClient } from './interfaces';
 
 /**
@@ -71,7 +71,13 @@ export default class PGMock2 {
              *   ]
              * }
              */
-            query: (sql: string, values: any[]): Promise<QueryResult> => this.query(sql, values),
+            query: (sql: string|QueryConfig, values?: any[]): Promise<QueryResult> => {
+                if (typeof sql === 'string') {
+                    return this.query(sql, values as any[]);
+                }
+
+                return this.query(sql.text, sql.values as any[]);
+            },
 
             /**
              * Simulate releasing a pg connection.

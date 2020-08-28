@@ -1,6 +1,6 @@
 {
-  "name": "pgmock2",
-  "version": "2.0.3",
+  "name": "pgmock2-node12",
+  "version": "2.0.5",
   "description": "An NPM module for mocking a connection to a PostgreSQL database.",
   "homepage": "https://jfavrod.github.io/pgmock2/",
   "main": "lib/index.js",
@@ -42,7 +42,7 @@
     "ts-node": "^8.5.4",
     "tslint": "^5.20.1",
     "typedoc": "^0.16.11",
-    "typescript": "^3.8.3"
+    "typescript": "^3.9.7"
   },
   "dependencies": {
     "@types/pg": "^7.11.1",
